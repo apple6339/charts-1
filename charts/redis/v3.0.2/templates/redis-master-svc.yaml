@@ -22,7 +22,8 @@ spec:
   {{- end -}}
   ports:
   - name: redis
-    port: 6379
+    containerport: 6379
+    hostPort: 32000
     targetPort: redis
   {{- if .Values.metrics.enabled }}
   - name: metrics
