@@ -82,6 +82,9 @@ spec:
         {{- end }}
         ports:
         - name: redis
+          protocol: TCP
+          containerPort: 6379
+          hostPort: 32002
           containerPort: {{ .Values.master.port }}
         {{- if .Values.master.livenessProbe.enabled }}
         livenessProbe:
